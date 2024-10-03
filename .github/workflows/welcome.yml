@@ -11,15 +11,3 @@ jobs:
   build:
     name: Post welcome comment
     runs-on: ubuntu-latest
-    steps:
-      # Checkout the repository to access the code
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Post a comment on the pull request
-      - name: Post welcome comment
-        uses: peter-evans/create-or-update-comment@v3
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          issue-number: ${{ github.event.pull_request.number }}
-          body: "Welcome to the project! Thank you for your pull request."
